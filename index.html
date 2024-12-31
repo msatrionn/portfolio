@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <style>
+      /* Tailwind classes for smooth transition */
+      .logo-item {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .logo-item.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+      }
+    </style>
+
+    <nav
+      class="bg-white px-[100px] items-center justify-between border-emerald-400 dark:bg-gray-900"
+    >
+      <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+        <a
+          href="https://flowbite.com/"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <span class="self-center text-2xl font-semibold whitespace-nowrap">
+            Port<span class="text-emerald-400">folio</span>
+          </span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button
+            data-collapse-toggle="navbar-cta"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-cta"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-cta"
+        >
+          <ul
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 md:p-0 font-bold text-emerald-400 bg-emerald-400 rounded md:bg-transparent md:text-emerald-400 md:dark:text-emerald-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-emerald-400 md:dark:hover:text-emerald-500 dark:text-emerald-400 dark:hover:bg-gray-700 dark:hover:text-emerald-400 md:dark:hover:bg-transparent dark:border-gray-700"
+                >Tentang Saya</a
+              >
+            </li>
+            <li>
+              <a
+                href="#portfolio"
+                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-emerald-400 md:dark:hover:text-emerald-500 dark:text-emerald-400 dark:hover:bg-gray-700 dark:hover:text-emerald-400 md:dark:hover:bg-transparent dark:border-gray-700"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="#kontak"
+                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-emerald-400 md:dark:hover:text-emerald-500 dark:text-emerald-400 dark:hover:bg-gray-700 dark:hover:text-emerald-400 md:dark:hover:bg-transparent dark:border-gray-700"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section
+      class="flex flex-col-reverse md:flex-row items-center justify-between mt-[120px] px-[100px] text-emerald-400 -mt-10"
+    >
+      <!-- Caption (Kiri) -->
+      <div class="max-w-lg mb-8 md:mb-0" data-aos="fade-right">
+        <h1 class="text-4xl text-black font-bold mb-4">
+          Selamat Datang di
+          <span class="text-emerald-400">Portfolio Saya!</span>
+        </h1>
+        <div class="text-gray-800 font-bold text-2xl">
+          Muhammad Satriyo Noto Negoro
+        </div>
+        <p class="text-gray-600">Fullstack Developer</p>
+        <p class="text-lg mb-6 text-black mt-4">
+          Ini adalah tempat di mana saya berbagi karya terbaik saya dalam desain
+          web dan pengembangan. Jelajahi lebih lanjut untuk melihat
+          proyek-proyek saya.
+        </p>
+        <a
+          href="#portfolio"
+          class="inline-block bg-emerald-400 text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-emerald-400 transition"
+        >
+          Lihat Portfolio
+        </a>
+        <a
+          href="./assets/satriyo_EN.pdf"
+          class="inline-block text-emerald-700 py-2 px-6 rounded-lg text-lg font-semibold transition"
+        >
+          <i class="fas fa-download"></i> Unduh CV
+        </a>
+      </div>
+
+      <div
+        class="flex-shrink-0 rounded-full bg-white w-[300px] h-[300px] md:w-[500px] md:h-[500px] relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+        data-aos="fade-left"
+      >
+        <!-- Gambar dengan filter grayscale untuk hitam putih -->
+        <img
+          src="./assets/bg3.jpeg"
+          alt="Portfolio Image"
+          class="w-full h-full object-cover object-center rounded-full shadow-xl border-[20px] border-emerald-400 transition-all duration-300"
+        />
+      </div>
+    </section>
+    <section class="px-[100px] mt-[130px] mb-10" data-aos="fade-up">
+      <div class="text-4xl font-bold text-emerald-700 text-center" id="about">
+        Tentang Saya
+      </div>
+      <p class="text-center mt-10 text-gray-600 text-lg">
+        Saya seorang Full Stack Developer yang berpengalaman dalam mengembangkan
+        aplikasi web dan perangkat lunak menggunakan berbagai teknologi,
+        termasuk <b>Golang, Node.js, PHP, React, dan Python</b>. Di sisi
+        backend, saya mahir dalam membangun aplikasi yang scalable dan efisien.
+        Untuk frontend, saya fokus pada pengalaman pengguna dengan menggunakan
+        React untuk menciptakan antarmuka yang responsif. Selain itu, saya juga
+        berpengalaman dalam DevOps, mengelola CI/CD dan infrastruktur cloud.
+        Dengan latar belakang yang luas di berbagai stack teknologi, saya selalu
+        bersemangat untuk belajar dan menciptakan solusi yang inovatif dan
+        berdampak. Jika Anda memiliki proyek atau ide untuk dibahas, jangan ragu
+        untuk menghubungi saya!
+      </p>
+      <!-- sosmed -->
+      <div class="flex justify-center mt-10">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          class="text-gray-600 hover:text-emerald-500"
+        >
+          <!-- Facebook Icon -->
+          <svg
+            class="w-6 h-6 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          class="text-gray-600 hover:text-emerald-500"
+        >
+          <!-- Instagram Icon -->
+          <svg
+            class="w-6 h-6 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://wa.me/"
+          target="_blank"
+          class="text-gray-600 ml-2 mr-1 hover:text-emerald-500"
+        >
+          <!-- WhatsApp Icon -->
+          <svg
+            class="w-6 h-6 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+              clip-rule="evenodd"
+            />
+            <path
+              fill="currentColor"
+              d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://github.com/msatrionn/"
+          target="_blank"
+          class="text-gray-600 hover:text-emerald-500"
+        >
+          <svg
+            class="w-6 h-6 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/msatriyonn/"
+          target="_blank"
+          class="text-gray-600 hover:text-emerald-500"
+        >
+          <!-- LinkedIn Icon -->
+          <svg
+            class="w-6 h-6 dark:text-white ml-1"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z"
+              clip-rule="evenodd"
+            />
+            <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
+          </svg>
+        </a>
+      </div>
+    </section>
+    <section class="px-[100px] mt-[100px] mb-10">
+      <div
+        class="text-4xl font-bold text-emerald-700 text-center mb-10"
+        id="portfolio"
+      >
+        Portfolio
+      </div>
+      <div
+        id="default-carousel"
+        class="relative w-full"
+        data-carousel="slide"
+        data-aos="fade-up"
+      >
+        <!-- Carousel wrapper -->
+        <div class="relative h-[500px] overflow-hidden rounded-lg md:h-[500px]">
+          <!-- Item 1 (3 cards in a row) -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+              <!-- Card 1 -->
+              <a
+                href="./assets/aino2.png"
+                class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              >
+                <img
+                  class="object-contain rounded-t-lg"
+                  src="./assets/aino2.png"
+                  alt=""
+                />
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-emerald-700 dark:text-white"
+                  >
+                    Aplikasi Tiket Wisata
+                  </h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Membuat Halaman pembayaran dan voucher pada aplikasi tiket
+                    wisata menggunakan <b>VueJS</b>
+                  </p>
+
+                  <p class="text-sm text-gray-400">
+                    Perusahaan : Aino Indonesia
+                  </p>
+                </div>
+              </a>
+
+              <!-- Card 2 -->
+              <a
+                href="./assets/dalem.png"
+                class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              >
+                <img
+                  class="object-contain rounded-t-lg"
+                  src="./assets/dalem.png"
+                  alt=""
+                />
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-emerald-700 dark:text-white"
+                  >
+                    Dashboard ERP penjualan Apartement
+                  </h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Membuat Dashboard untuk ERP untuk penjualan apartemen dan
+                    perumahan menggunakan <b>Codeigniter</b>
+                  </p>
+                  <p class="text-sm text-gray-400">
+                    Perusahaan : PT Ndalem Teknologi
+                  </p>
+                </div>
+              </a>
+
+              <!-- Card 3 -->
+              <a
+                href="./assets/interport.png"
+                class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              >
+                <img
+                  class="object-contain rounded-t-lg"
+                  src="./assets/interport.png"
+                  alt=""
+                />
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-emerald-700 dark:text-white"
+                  >
+                    Dashboard Logistik
+                  </h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Penambahan fitur, dan maintenance dashboard logistik
+                    menggunakan <b>Golang, React, dan Node JS</b>
+                  </p>
+                  <p class="text-sm text-gray-400">
+                    Perusahaan : PT Safepedia Global Teknologi
+                  </p>
+                  <p class="text-sm text-gray-400">Client : Interport</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Item 2 (3 cards in a row) -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+              <!-- Card 4 -->
+              <a
+                href="./assets/uii.png"
+                class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              >
+                <img
+                  class="object-contain rounded-t-lg"
+                  src="./assets/uii.png"
+                  alt=""
+                />
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-emerald-700 dark:text-white"
+                  >
+                    Dashboard Reporting Gaji Karyawan
+                  </h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Membuat API Backend menggunakan Lumen dan Golang untuk
+                    laporan dashboard penggajian karyawan.
+                  </p>
+                  <p class="text-sm text-gray-400">
+                    Perusahaan : Universitas Islam Indonesia
+                  </p>
+                </div>
+              </a>
+
+              <!-- Card 5 -->
+              <a
+                href="./assets/superkid.png"
+                class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              >
+                <img
+                  class="object-contain rounded-t-lg"
+                  src="./assets/superkid.png"
+                  alt=""
+                />
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-emerald-700 dark:text-white"
+                  >
+                    Aplikasi Pembelajaran Online
+                  </h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Berpartisipasi dalam pembuatan API payment gateway
+                    menggunakan Golang dan Ipay88
+                  </p>
+                  <p class="text-sm text-gray-400">
+                    Perusahaan : Avatar Solution
+                  </p>
+                </div>
+              </a>
+
+              <!-- Card 6 -->
+              <a
+                href="./assets/cyber.png"
+                class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              >
+                <img
+                  class="object-contain rounded-t-lg"
+                  src="./assets/cyber.png"
+                  alt=""
+                />
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-emerald-700 dark:text-white"
+                  >
+                    Dashboard ERP pengelolaan ayam
+                  </h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Melakukan development dan maintenance dashboard untuk
+                    mengelola kandang ayam menggunakan laravel
+                  </p>
+                  <p class="text-sm text-gray-400">
+                    Perusahaan : Cyber Olympus
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Item 3 (3 cards in a row) -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+              <!-- Card 4 -->
+              <a
+                href="./assets/ai_core.png"
+                class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              >
+                <img
+                  class="object-contain rounded-t-lg"
+                  src="./assets/ai_core.png"
+                  alt=""
+                />
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-emerald-700 dark:text-white"
+                  >
+                    Aplikasi AI Core
+                  </h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    Membuat GUI untuk memprediksi RQD atau Rock Quality Design
+                    di sebuah tambang menggunakan python PYQT5
+                  </p>
+                  <p class="text-sm text-gray-400">
+                    Perusahaan : Eksplorasi Nusa Jaya
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider indicators -->
+        <div
+          class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+        >
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="true"
+            aria-label="Slide 1"
+            data-carousel-slide-to="0"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 2"
+            data-carousel-slide-to="1"
+          ></button>
+        </div>
+
+        <!-- Slider controls -->
+        <button
+          type="button"
+          class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-200/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4 text-emerald-400 dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-200/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4 text-emerald-400 dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+    </section>
+    <section class="mt-16">
+      <div class="bg-gradient-to-b from-emerald-100 to-emerald-300 py-10">
+        <h2 class="text-4xl text-center font-semibold mb-20 text-emerald-800">
+          Teknologi Yang Saya Gunakan
+        </h2>
+
+        <!-- Logo Grid -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-6xl mx-auto px-4"
+        >
+          <!-- React -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+              alt="React Logo"
+              class="w-24 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+
+          <!-- Go (Golang) -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2019/01/Golang_Logo.png"
+              alt="Golang Logo"
+              class="w-24 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+
+          <!-- Node.js -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2016/09/Node_logo_NodeJS.png"
+              alt="Node.js Logo"
+              class="w-24 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+
+          <!-- JavaScript -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2019/01/JavaScript_Logo.png"
+              alt="JavaScript Logo"
+              class="w-24 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+
+          <!-- PHP -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2016/09/PHP_logo.png"
+              alt="PHP Logo"
+              class="w-24 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+
+          <!-- Python -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2016/10/Python_logo_wordmark.png"
+              alt="Python Logo"
+              class="w-24 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+
+          <!-- Vue.js -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2022/12/Vue.js_Logo.png"
+              alt="Vue.js Logo"
+              class="w-24 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+
+          <!-- PostgreSQL -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2016/10/PostgreSQL_logo_Postgre_SQL.png"
+              alt="PostgreSQL Logo"
+              class="w-28 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+
+          <!-- MySQL -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2016/05/MySQL_logo_logotype.png"
+              alt="MySQL Logo"
+              class="w-28 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+
+          <!-- MongoDB -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2016/09/MongoDB_logo_Mongo_DB.png"
+              alt="MongoDB Logo"
+              class="w-28 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <!-- SVG Logo -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-28 mx-auto transition-transform transform group-hover:scale-110"
+              viewBox="0 0 128 128"
+            >
+              <path
+                d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
+                fill="#38bdf8"
+              />
+            </svg>
+          </div>
+          <!-- Bootstrap -->
+          <div
+            class="logo-item group opacity-0 translate-y-10 transition-all duration-700 ease-in-out"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2022/12/Bootstrap_Logo.png"
+              alt="Bootstrap Logo"
+              class="w-28 mx-auto transition-transform transform group-hover:scale-110"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="px-8 py-16 bg-gray-100" id="kontak">
+      <div class="max-w-6xl mx-auto">
+        <!-- Title -->
+        <h2 class="text-4xl font-semibold text-center text-emerald-600 mb-10">
+          My Journey
+        </h2>
+
+        <!-- Stepper -->
+        <div class="relative">
+          <div class="flex justify-between">
+            <!-- Step 1: Pendidikan -->
+            <div class="relative text-center flex-1">
+              <div
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 w-full border-t-2 mt-2 border-gray-400"
+              ></div>
+              <div
+                class="stepper-step hover:bg-emerald-700 cursor-pointer shadow-xl relative z-10 flex items-center justify-center w-12 h-12 bg-emerald-500 text-white rounded-full mx-auto mb-4"
+                data-step="1"
+                data-aos="fade-right"
+              >
+                <span><i class="fa-solid fa-graduation-cap"></i></span>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-700">Pendidikan</h3>
+            </div>
+
+            <!-- Step 2: Pengalaman Kerja -->
+            <div class="relative text-center flex-1">
+              <div
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 w-full border-t-2 mt-2 border-gray-400"
+              ></div>
+              <div
+                class="stepper-step hover:bg-emerald-700 cursor-pointer shadow-xl relative z-10 flex items-center justify-center w-12 h-12 bg-emerald-500 text-white rounded-full mx-auto mb-4"
+                data-step="2"
+                data-aos="fade-down"
+              >
+                <span><i class="fa-regular fa-building"></i></span>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-700">
+                Pengalaman Kerja
+              </h3>
+            </div>
+
+            <!-- Step 3: Kontak -->
+            <div class="relative text-center flex-1">
+              <div
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 w-full border-t-2 mt-2 border-gray-400"
+              ></div>
+              <div
+                class="stepper-step hover:bg-emerald-700 cursor-pointer shadow-xl relative z-10 flex items-center justify-center w-12 h-12 bg-emerald-500 text-white rounded-full mx-auto mb-4"
+                data-step="3"
+                data-aos="fade-left"
+              >
+                <span><i class="fa-solid fa-address-book"></i></span>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-700">Kontak</h3>
+            </div>
+          </div>
+
+          <!-- Step Content -->
+          <div class="mt-12">
+            <div class="step-content step-1 hidden">
+              <!-- Pendidikan -->
+              <h4 class="text-2xl font-semibold text-emerald-600 mb-4">
+                Pendidikan
+              </h4>
+              <p class="text-lg text-gray-700">
+                <strong>Teknik Informatika</strong> dari
+                <em>Universitas Muhammadiyah Magelang</em> (2017-2021)
+                <br />
+              </p>
+            </div>
+
+            <div class="step-content step-2" data-aos="fade-up">
+              <!-- Pengalaman Kerja -->
+              <h4 class="text-2xl font-semibold text-emerald-600 mb-4">
+                Pengalaman Kerja
+              </h4>
+
+              <!-- Safepedia Global Teknologi -->
+              <div class="mb-6">
+                <h5 class="text-xl font-semibold text-gray-700">
+                  Full Stack Engineer -
+                  <em>Safepedia Global Teknologi</em> (Oktober 2022 - Sekarang)
+                </h5>
+
+                <!-- Proyek di Safepedia Global Teknologi -->
+                <div class="ml-6">
+                  <div class="mb-6 mt-6">
+                    <!-- PT Interport Mandiri Utama -->
+                    <h5 class="text-xl font-semibold text-gray-700">
+                      <em>PT Interport Mandiri Utama</em>
+                    </h5>
+                    <ul class="list-disc pl-6 mt-2 text-gray-700">
+                      <li>
+                        Bekerja menambah fitur laporan dan memelihara dashboard
+                        logistik yang mengadopsi arsitektur Microservices.
+                      </li>
+                      <li>
+                        Menggunakan Gin (Golang) dan Node.js untuk pengembangan
+                        backend, React.js untuk frontend, dan PostgreSQL sebagai
+                        database.
+                      </li>
+                      <li>
+                        Semua layanan dihosting di Azure untuk memastikan
+                        kinerja aplikasi yang optimal dan skalabilitas yang
+                        baik.
+                      </li>
+                      <li>
+                        Manajemen data dan integrasi menggunakan Azure Data
+                        Factory.
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Adhi guna putera -->
+                  <div class="mb-6">
+                    <h5 class="text-lg font-semibold text-gray-700">
+                      <em>PT Adhi Guna Putera</em>
+                    </h5>
+                    <ul class="list-disc pl-6 mt-2 text-gray-700">
+                      <li>
+                        Memelihara, mengoptimalkan, dan melakukan deployment
+                        server untuk Odoo.
+                      </li>
+                      <li>
+                        Menambah kolom dan mengimpor data melalui Excel ke Odoo.
+                      </li>
+                      <li>
+                        Membuat fitur impor Excel untuk Odoo Invoice dan Journal
+                        Entries melalui API menggunakan Golang.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Pusdatin Kementrian ESDM -->
+                  <div class="mb-6">
+                    <h5 class="text-lg font-semibold text-gray-700">
+                      <em>Pusdatin Kementrian ESDM</em>
+                    </h5>
+                    <ul class="list-disc pl-6 mt-2 text-gray-700">
+                      <li>
+                        Membuat dashboard untuk menampilkan data pemrosesan
+                        kilang minyak menggunakan Laravel dan VueJS.
+                      </li>
+                      <li>
+                        Menambahkan fitur impor data Excel untuk memasukkan data
+                        ke dalam database PostgreSQL.
+                      </li>
+                      <li>
+                        Memberikan bantuan dalam pembuatan fitur peta
+                        menggunakan Leaflet.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- PT Eksplorasi Nusa Jaya -->
+                  <div class="mb-6">
+                    <h5 class="text-lg font-semibold text-gray-700">
+                      <em>PT Eksplorasi Nusa Jaya</em>
+                    </h5>
+                    <ul class="list-disc pl-6 mt-2 text-gray-700">
+                      <li>
+                        Menambah fitur dan memelihara antarmuka grafis (GUI)
+                        untuk aplikasi desktop berbasis AI menggunakan Python
+                        (PyQt5). Aplikasi ini digunakan untuk menentukan
+                        kualitas batuan di lapisan tanah dengan mengintegrasikan
+                        teknologi kecerdasan buatan untuk analisis yang lebih
+                        akurat.
+                      </li>
+                      <li>
+                        Membuat aplikasi untuk reporting secara daily,
+                        menggunakan Golang Wails untuk desktop, dan API
+                        menggunakan Node JS (Express)
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Support Internal -->
+                  <div class="mb-6">
+                    <h5 class="text-lg font-semibold text-gray-700">
+                      Backend Developer - <em>Support Internal</em>
+                    </h5>
+                    <ul class="list-disc pl-6 mt-2 text-gray-700">
+                      <li>
+                        Membuat layanan untuk menginput data dari sensor cuaca
+                        menggunakan Golang.
+                      </li>
+                      <li>
+                        Membuat layanan untuk membantu memprediksi data GEOAI
+                        menggunakan Flask Python.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Universitas Islam Indonesia -->
+              <div class="mb-6">
+                <h5 class="text-xl font-semibold text-gray-700">
+                  Software Engineer -
+                  <em>Universitas Islam Indonesia</em> (Maret 2022 - Desember
+                  2022)
+                </h5>
+                <ul class="list-disc pl-6 mt-2 text-gray-700">
+                  <li>
+                    Membuat komponen Backend untuk menampilkan gaji karyawan
+                    internal menggunakan Lumen.
+                  </li>
+                  <li>
+                    Mengembangkan komponen Backend untuk sistem penggajian
+                    menggunakan Golang.
+                  </li>
+                  <li>
+                    Melakukan sinkronisasi data dari tim lain untuk dapat
+                    digunakan oleh layanan kami.
+                  </li>
+                  <li>Membuat dokumentasi API untuk pengembang frontend.</li>
+                  <li>
+                    Berkolaborasi dengan tim untuk mengoptimalkan query,
+                    layanan, dan proses bisnis.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Platon Yogyakarta -->
+              <div class="mb-6">
+                <h5 class="text-xl font-semibold text-gray-700">
+                  <em>Platon Yogyakarta</em> (September 2022 - April 2023)
+                </h5>
+                <ul class="list-disc pl-6 mt-2 text-gray-700">
+                  <li>
+                    Memperbaiki bug ekspor Excel dan beberapa fitur di bagian
+                    Dashboard menggunakan Laravel.
+                  </li>
+                  <li>
+                    Mengembangkan aplikasi rekrutmen internal menggunakan
+                    NextJS.
+                  </li>
+                  <li>
+                    Melakukan perbaikan dan menambah fitur sesuai dengan tugas
+                    yang diberikan.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Aino Indonesia -->
+              <div class="mb-6">
+                <h5 class="text-xl font-semibold text-gray-700">
+                  Full Stack Developer - <em>Aino Indonesia</em> (Agustus 2022 -
+                  November 2022)
+                </h5>
+                <ul class="list-disc pl-6 mt-2 text-gray-700">
+                  <li>
+                    Membuat komponen Frontend pada halaman pembayaran dan
+                    voucher Tiket Perjalanan menggunakan Vue.js.
+                  </li>
+                  <li>
+                    Melakukan perbaikan dan menambah fitur pada bagian Dashboard
+                    pembayaran menggunakan Laravel.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Avatar Solutions Bali -->
+              <div class="mb-6">
+                <h5 class="text-xl font-semibold text-gray-700">
+                  Back End Developer - <em>Avatar Solutions Bali</em> (Juli 2022
+                  - Oktober 2022)
+                </h5>
+                <ul class="list-disc pl-6 mt-2 text-gray-700">
+                  <li>
+                    Menambah fitur dan memperbaiki bug pada aplikasi
+                    pembelajaran di sisi Backend menggunakan Golang.
+                  </li>
+                  <li>
+                    Mengembangkan sistem pembayaran di sisi Backend menggunakan
+                    Golang dan aplikasi pihak ketiga (Ipaymu).
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Cyber Olympus Yogyakarta -->
+              <div class="mb-6">
+                <h5 class="text-xl font-semibold text-gray-700">
+                  Laravel Programmer -
+                  <em>Cyber Olympus Yogyakarta</em> (Desember 2021 - Februari
+                  2022)
+                </h5>
+                <ul class="list-disc pl-6 mt-2 text-gray-700">
+                  <li>
+                    Memelihara dan menambah fitur pada dashboard manajemen ayam
+                    menggunakan framework Laravel & Ajax.
+                  </li>
+                  <li>
+                    Integrasi CMS dengan framework Laravel untuk perusahaan.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Ndalem Tekonologi Indonesia -->
+              <div class="mb-6">
+                <h5 class="text-xl font-semibold text-gray-700">
+                  Web Developer - <em>Ndalem Tekonologi Indonesia</em> (November
+                  2021 - Februari 2022)
+                </h5>
+                <ul class="list-disc pl-6 mt-2 text-gray-700">
+                  <li>
+                    Memelihara sistem pengembang perumahan dan apartemen
+                    menggunakan CodeIgniter dan Laravel.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="step-content step-3 hidden">
+              <!-- Kontak -->
+              <h4 class="text-2xl font-semibold text-emerald-600 mb-4">
+                Kontak
+              </h4>
+              <p class="text-lg text-gray-700">
+                <strong>Email:</strong> mnotonegoro7@gmail.com <br />
+                <strong>Phone:</strong> +6281227578398 <br />
+                <strong>LinkedIn:</strong>
+                <a
+                  href="https://www.linkedin.com/in/msatriyonn/"
+                  class="text-emerald-500"
+                  >linkedin.com/in/msatriyonn</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-8">
+      <div class="max-w-6xl mx-auto px-4">
+        <!-- Footer Content -->
+        <div class="flex flex-col sm:flex-row justify-between items-center">
+          <!-- Logo / Brand -->
+          <div class="mb-4 sm:mb-0">
+            <a
+              href="#"
+              class="text-2xl font-bold text-emerald-400 hover:text-emerald-500"
+            >
+              <span class="text-white">Port</span>folio
+            </a>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="flex space-x-6 mb-4 sm:mb-0">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              class="text-gray-600 hover:text-emerald-500"
+            >
+              <!-- Facebook Icon -->
+              <svg
+                class="w-6 h-6 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              class="text-gray-600 hover:text-emerald-500"
+            >
+              <!-- Instagram Icon -->
+              <svg
+                class="w-6 h-6 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/"
+              target="_blank"
+              class="text-gray-600 ml-2 mr-1 hover:text-emerald-500"
+            >
+              <!-- Whatsapp Icon -->
+              <svg
+                class="w-6 h-6 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                  clip-rule="evenodd"
+                />
+                <path
+                  fill="currentColor"
+                  d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://github.com/msatrionn/"
+              target="_blank"
+              class="text-gray-600 hover:text-emerald-500"
+            >
+              <svg
+                class="w-6 h-6 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/msatriyonn/"
+              target="_blank"
+              class="text-gray-600 hover:text-emerald-500"
+            >
+              <!-- LinkedIn Icon -->
+              <svg
+                class="w-6 h-6 dark:text-white ml-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z"
+                  clip-rule="evenodd"
+                />
+                <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="text-sm text-gray-500 mt-6">
+          <p>
+            &copy;2024
+            <span class="text-emerald-400">Muhammad Satriyo Noto Negoro. </span
+            >Copyright
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <!-- Script untuk AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 800,
+          easing: "ease-in-out",
+          once: true,
+        });
+      });
+    </script>
+    <script>
+      const steps = document.querySelectorAll(".stepper-step");
+      const stepContents = document.querySelectorAll(".step-content");
+      function showStep(step) {
+        stepContents.forEach((content) => {
+          content.classList.add("hidden");
+        });
+
+        const activeStep = document.querySelector(`.step-${step}`);
+        if (activeStep) {
+          activeStep.classList.remove("hidden");
+        }
+      }
+
+      steps.forEach((step) => {
+        step.addEventListener("click", () => {
+          const stepNumber = step.getAttribute("data-step");
+          showStep(stepNumber);
+        });
+      });
+
+      showStep(2);
+    </script>
+  </body>
+</html>
